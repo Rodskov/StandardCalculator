@@ -2,6 +2,7 @@ class Calculator {
 constructor(previousOperandTextElement, currentOperandTextElement) {
     this.previousOperandTextElement = previousOperandTextElement
     this.currentOperandTextElement = currentOperandTextElement
+    this.memory = 0
     this.clear()
 }
 
@@ -55,6 +56,35 @@ compute() {
     this.operation = undefined
     this.previousOperand = ''
 }
+
+memoryPlus() {
+    if (this.currentOperand !== "") {
+      const currentValue = parseFloat(this.currentOperand);
+    if (this.memory === 0) {
+        this.memory += currentValue
+    } else if (!isNaN(currentValue)) {
+        this.currentOperand = (currentValue + this.memory).toString()
+    }
+}}
+
+memoryMinus() {
+    if (this.currentOperand !== "") {
+      const currentValue = parseFloat(this.currentOperand);
+    if (this.memory === 0) {
+        this.memory += currentValue
+    } else if (!isNaN(currentValue)) {
+        this.currentOperand = (currentValue - this.memory).toString()
+    }
+}}
+
+memoryRecall() {
+    this.currentOperand = this.memory.toString();
+}
+
+memoryClear() {
+    this.memory = 0;
+}
+
 
 getBinary() {
     if (this.previousOperand !== '') {
@@ -154,5 +184,25 @@ deleteButton.addEventListener('click', button => {
 
 binaryButton.addEventListener('click', button => {
     calculator.getBinary()
+    calculator.updateDisplay()
+})
+
+memoryPlusButton.addEventListener("click", () => {
+    calculator.memoryPlus()
+    calculator.updateDisplay()
+})
+
+memoryMinusButton.addEventListener("click", () => {
+    calculator.memoryMinus()
+    calculator.updateDisplay()
+})
+  
+memoryRecallButton.addEventListener("click", () => {
+    calculator.memoryRecall()
+    calculator.updateDisplay()
+})
+
+memoryClearButton.addEventListener("click", () => {
+    calculator.memoryClear()
     calculator.updateDisplay()
 })
