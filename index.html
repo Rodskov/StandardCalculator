@@ -1,40 +1,46 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div class="calculator">
-        <input type="text" class="display" placeholder="0">
-
+        <div class="output-grid">
+            <div class="output">
+                <div data-previous-operand class="previous-operand"></div>
+                <div data-current-operand class="current-operand"></div>
+            </div>
+        </div>
+        
         <div class="buttons">
-            <button class="operator" id="functions" data-value="MC"> MC </button>
-            <button class="operator" id="functions" data-value="MR"> MR </button>
-            <button class="operator" id="functions" data-value="M-"> M- </button>
-            <button class="operator" id="functions" data-value="M+"> M+ </button>
-            <button class="operator" id="functions" data-value="AC"> AC </button>
-            <button class="operator" id="functions" data-value="DEL"> DEL </button>
-            <button class="operator" id="functions" data-value="BIN"> BIN </button>
-            <button class="operator" id="operators" data-value="÷"> ÷ </button>
-            <button id="numbers" data-value="7"> 7 </button>
-            <button id="numbers" data-value="8"> 8 </button>
-            <button id="numbers" data-value="9"> 9 </button>
-            <button class="operator" id="operators" data-value="X"> X </button>
-            <button id="numbers" data-value="4"> 4 </button>
-            <button id="numbers" data-value="5"> 5 </button>
-            <button id="numbers" data-value="6"> 6 </button> 
-            <button class="operator" id="operators" data-value="-"> - </button>
-            <button id="numbers" data-value="1"> 1 </button>
-            <button id="numbers" data-value="2"> 2 </button>
-            <button id="numbers" data-value="3"> 3 </button>
-            <button class="operator" id="operators" data-value="+"> + </button>
-            <button id="numbers" data-value="0"> 0 </button>
-            <button id="numbers" data-value="00"> 00 </button>
-            <button id="numbers" data-value="."> . </button>
-            <button class="operator" id="operators" data-value="="> = </button>
+            <button data-memory-clear id="functions"> MC </button>
+            <button data-memory-recall id="functions"> MR </button>
+            <button data-memory-minus id="functions"> M- </button>
+            <button data-memory-plus id="functions"> M+ </button>
+            <button data-all-clear id="functions"> AC </button>
+            <button data-delete id="functions"> DEL </button>
+            <button data-binary id="functions"> BIN </button>
+            <button data-operation id="operators"> ÷ </button>
+            <button data-number id="numbers"> 7 </button>
+            <button data-number id="numbers"> 8 </button>
+            <button data-number id="numbers"> 9 </button>
+            <button data-operation id="operators"> X </button>
+            <button data-number id="numbers"> 4 </button>
+            <button data-number id="numbers"> 5 </button>
+            <button data-number id="numbers"> 6 </button> 
+            <button data-operation id="operators"> - </button>
+            <button data-number id="numbers"> 1 </button>
+            <button data-number id="numbers"> 2 </button>
+            <button data-number id="numbers"> 3 </button>
+            <button data-operation id="operators"> + </button>
+            <button data-number id="numbers"> 0 </button>
+            <button data-number id="numbers"> 00 </button>
+            <button data-number id="numbers"> . </button>
+            <button data-equals id="operators"> = </button>
         </div>
     </div>
     <script src="calculator.js"></script>

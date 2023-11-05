@@ -25,20 +25,38 @@ body {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.display {
-    height: 80px;
-    width: 100%;
-    outline: none;
+.output-grid {
+    display: grid;
+    grid-template-rows: minmax(100px, auto);
+    pointer-events: none;
+}
+
+.output {
     margin-top: 10px;
-    padding: 3px;
-    margin-bottom: 10px;
-    font-size: 25px;
-    text-align: right;
+    margin-bottom: 20px;
+    grid-column: 1 / -1;
+    background-color: rgba(255, 255, 255, 0.75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
     border-style: solid;
     border-width: 1px;
     border-color: #0e0d0d;
-    pointer-events: none;
-}
+  }
+  
+  .output .previous-operand {
+    color: rgba(0, 0, 0, 0.75);
+    font-size: 1.5rem;
+  }
+  
+  .output .current-operand {
+    color: black;
+    font-size: 2.5rem;
+  }
 
 .buttons {
     display: grid;
